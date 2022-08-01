@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { defineCustomElements } from '@dtnum/core/loader';
+import { defineCustomElements } from './@dtnum/core/loader';
 
 import './assets/main.css'
 

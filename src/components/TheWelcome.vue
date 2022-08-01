@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FrAccordion } from '@dtnum/vue';
+import { FrAccordion } from './../@dtnum/vue';
 import { ref } from 'vue'
 
 const descripton = ref('descripton')
