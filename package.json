@@ -9,8 +9,8 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@dtnum/core": "^0.0.11",
-    "@dtnum/vue": "^1.0.11",
+    "@dtnum/core": "^0.0.15",
+    "@dtnum/vue": "^1.0.15",
     "rollup-plugin-copy": "^3.4.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"

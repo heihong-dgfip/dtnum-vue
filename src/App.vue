@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
+import { ref } from 'vue'
+
+let element: any;
+
+
+function addElement(){
+   let link = document.createElement('a');
+      link.href = '#';
+      link.target = '_self';
+      link.innerHTML = 'acces direct';
+    element = link;
+}
 </script>
 
 <template>
@@ -13,13 +25,14 @@ import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
       >
       </FrHeaderService>
       <FrNavigation>
-        <ul class="fr-nav__list">
+        <ul class="fr-nav__list" id="">
           <li class="fr-nav__item">
               <RouterLink to="/" class="fr-nav__link">Home</RouterLink>
           </li>
           <li class="fr-nav__item">
            <RouterLink to="/about" class="fr-nav__link">About</RouterLink>
           </li>
+          {{element}}
         </ul>
       </FrNavigation>
     </FrHeader>
@@ -36,4 +49,5 @@ import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
   </header>
  -->
   <RouterView />
+    <button @Click="addElement">click</button>
 </template>
