@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
+function addElement(){
+ let link = document.createElement('a');
+      link.href = '#';
+      link.target = '_self';
+      link.innerHTML = 'acces direct';
+  FrNavigation.addElement(link)
+}
 </script>
 
 <template>
@@ -33,6 +40,7 @@ import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
       </FrNavigation>
     
   </FrHeader>
+        <button @Click="addElement">addElement</button>
 <RouterView />
 </template>
 
