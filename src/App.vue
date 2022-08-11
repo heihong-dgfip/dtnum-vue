@@ -1,30 +1,22 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { FrHeader, FrHeaderService, FrNavigation } from '@dtnum/vue';
+import { ref } from 'vue'
+
+// https://vuejs.org/guide/essentials/template-refs.html#ref-on-component (Composition API)
+const el = ref();
+
 function addElement(){
  let link = document.createElement('a');
       link.href = '#';
       link.target = '_self';
       link.innerHTML = 'acces direct';
-  FrNavigation.addElement(link)
+      const comp = el.value.$el as FrNavigation;
+      comp.addElement(link);
 }
 </script>
 
 <template>
-  <!-- <header>
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-      
-    </div>
-  </header> 
-    <RouterView />-->
-  
   <FrHeader>
      <FrHeaderService
         slot="service"
@@ -34,7 +26,7 @@ function addElement(){
         text-link="Système de Design de l'État"
       >
       </FrHeaderService>
-      <FrNavigation>
+      <FrNavigation ref="el">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </FrNavigation>
